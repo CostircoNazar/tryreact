@@ -3,19 +3,25 @@ import TodoApp from './TodoApp'
 import './App.css'
 import tododatasrc from './components/Tododatasrc'
 
-function App() {
-  let todo = tododatasrc.map(thing =>
-    <TodoApp key={thing.id}
-             thing={thing}
-    />);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todoess: tododatasrc
+    }
+  }
+  render() {
 
-  return (
+    let todo = this.state.todoess.map(thing =>
+      <TodoApp key={thing.id}
+               thing={thing}
+      />);
+    return (
       <div className='App'>
         {todo}
-
-
-    </div>
-  );
+      </div>
+    )
+  }
 }
 
 export default App;
