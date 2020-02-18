@@ -1,17 +1,22 @@
 import React from 'react';
-import ContactCards from './components/ContactCards.js'
+import Array11 from './Array11'
 import './App.css'
+import data from './components/data'
 
 function App() {
+  let contactComponent = data.map(contComp =>
+    <Array11
+      key={contComp.id}
+      name={contComp.name}
+      email={contComp.email}
+      imgUrl={contComp.imgUrl}
+      phone={contComp.phone} />
+      );
   return (
       <div className='App'>
-        <ContactCards contact={
-          {name: "Mr. Nazar Costirco",
-            imgUrl:"//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2016%2F06%2F21%2F15%2F00%2Fnazar-1471215_960_720.png&amp;f=1&amp;nofb=1",
-            phone: "(+44)74-550-85-625",
-            email: "Costicocorp@icloud.com"
-          }
-        }/>
+        {contactComponent}
+        <Array11/>
+
     </div>
   );
 }
