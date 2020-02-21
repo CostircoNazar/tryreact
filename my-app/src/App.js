@@ -7,12 +7,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      todoess: tododatasrc
+      todoes: tododatasrc
     }
   }
   render() {
 
-    let todo = this.state.todoess.map(thing =>
+    let todo = this.state.todoes.map(thing =>
       <TodoApp key={thing.id}
                thing={thing}
       />);
