@@ -1,13 +1,14 @@
 import React from 'react';
 import App from "./App.js";
 import * as serviceWorker from './serviceWorker';
+import State from "./State";
 
 
 let ReactDOM;
 ReactDOM = require("react-dom");
 
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<State/>, document.getElementById('root'));
 
 
 
