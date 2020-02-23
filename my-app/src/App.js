@@ -1,47 +1,49 @@
-import React from 'react';
+import React from 'react'
 import TodoApp from './TodoApp'
-import './App.css'
-import tododatasrc from './components/Tododatasrc'
+import Tododatasrc from './components/Tododatasrc'
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      todoes: tododatasrc
-    }
+      todoes:Tododatasrc
+    };
+
     this.handleChange = this.handleChange.bind(this)
 
   }
 
   handleChange(id) {
-    this.setState(prevState => {
-      const updatedTodoes = prevState.todoes.map(todo => {
-        if (todo.id === id) {
-          todo.complited = !todo.complited
-        }
-        return todo
-      })
-      return {
-        todoes: updatedTodoes
-      }
-    })
+    this.setState(lastState => {
+      const todo = lastState.todoes.map((item) => {
+          if (id === item.id) {
+            item.complited = !item.complited
+          }
+          return item
 
-  }
+        }
+      );
+      return {
+        todoes: todo
+      }
+
+    })
+ }
 
   render() {
-
-    let todo = this.state.todoes.map(thing =>
-      <TodoApp key={thing.id}
-               thing={thing}
+    const acrossTodoDataSrc = this.state.todoes.map((prevState) =>
+      <TodoApp key={prevState.id}
+               option={prevState}
                handleChange={this.handleChange}
-
       />);
-    return (
-      <div className='App'>
-        {todo}
+    return(
+      <div>
+        {acrossTodoDataSrc}
       </div>
     )
   }
 }
 
-export default App;
+
+export default App
