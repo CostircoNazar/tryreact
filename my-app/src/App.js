@@ -1,24 +1,49 @@
-import React from 'react';
-import Array11 from './Array11'
-import './App.css'
-import data from './components/data'
+import React from 'react'
+import TodoApp from './TodoApp'
+import Tododatasrc from './components/Tododatasrc'
 
-function App() {
-  let contactComponent = data.map(contComp =>
-    <Array11
-      key={contComp.id}
-      name={contComp.name}
-      email={contComp.email}
-      imgUrl={contComp.imgUrl}
-      phone={contComp.phone} />
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todoes:Tododatasrc
+    };
+
+    this.handleChange = this.handleChange.bind(this)
+
+  }
+
+  handleChange(id) {
+    this.setState(lastState => {
+      const todo = lastState.todoes.map((item) => {
+          if (id === item.id) {
+            item.complited = !item.complited
+          }
+          return item
+
+        }
       );
-  return (
-      <div className='App'>
-        {contactComponent}
-        <Array11/>
+      return {
+        todoes: todo
+      }
 
-    </div>
-  );
+    })
+ }
+
+  render() {
+    const acrossTodoDataSrc = this.state.todoes.map((prevState) =>
+      <TodoApp key={prevState.id}
+               option={prevState}
+               handleChange={this.handleChange}
+      />);
+    return(
+      <div>
+        {acrossTodoDataSrc}
+      </div>
+    )
+  }
 }
 
-export default App;
+
+export default App
