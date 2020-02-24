@@ -1,21 +1,20 @@
-import React from 'react'
-
-function handleClick(it) {
-  console.log(it)
-}
+import React from "react";
 
 function TodoApp(props) {
-  return(
-    <div className="mytodo">
-      <input type="checkbox" checked={props.option.complited} onChange={()=>props.handleChange(props.option.id)}/>
+  return (
+    <div>
+      <input
+        type="checkbox"
+        onClick={() => props.handleChange(props.option.complited)}
+        onChange={() => console.log(props.option.id)}
+      />
       <p>{props.option.name}</p>
-      <p>{props.option.item}</p>
-      <button onClick={handleClick} >Save</button>
+      <p>{props.option.when}</p>
+      <p>{props.option.task}</p>
 
+      <button onClick={() => console.log("Saved")}>Save</button>
     </div>
-  )
+  );
 }
 
-
-
-export default TodoApp
+export default TodoApp;

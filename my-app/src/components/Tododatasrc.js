@@ -1,36 +1,34 @@
 //import React from 'react'
 
 let tododatasrc = [
-
-    {
-     id:0,
-      name: "Mr. Nazar Costirco",
-     item: 'Make an order from the shop',
-      when: 'Date goes here',
-      complited: true
-    },
-    {
-      id:1,
-      name: "Mr. Nazar Costirco",
-      item: 'Finish one react project',
-      when: 'Date goes here',
-      complited: false
-    },
-    {
-      id:2,
-      name: "Mr. Nazar Costirco",
-      item: 'read a book',
-      when: 'Date goes here',
-      complited: true
-    },
   {
-    id:3,
+    id: 0,
     name: "Mr. Nazar Costirco",
-    item: 'start sport activity',
-    when: 'Date goes here',
+    task: "Make an order from the shop",
+    when: "Date goes here",
+    complited: true
+  },
+  {
+    id: 1,
+    name: "Mr. Nazar Costirco",
+    task: "Finish one react project",
+    when: "Date goes here",
+    complited: false
+  },
+  {
+    id: 2,
+    name: "Mr. Nazar Costirco",
+    task: "read a book",
+    when: "Date goes here",
+    complited: true
+  },
+  {
+    id: 3,
+    name: "Mr. Nazar Costirco",
+    task: "start sport activity",
+    when: "Date goes here",
     complited: false
   }
-
 ];
 
 /* function ContactCards(props) {
@@ -46,4 +44,4 @@ let tododatasrc = [
 // }
 */
 
- export default tododatasrc;
+export default tododatasrc;
