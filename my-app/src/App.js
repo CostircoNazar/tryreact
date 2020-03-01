@@ -3,6 +3,8 @@ import TodoApp from "./TodoApp";
 import Tododatasrc from "./components/Tododatasrc";
 import Clock from "./Clock";
 import Conditional from "./Conditional";
+import "./App.css";
+import LogButton from "./components/LogButton";
 
 class App extends React.Component {
   constructor(props) {
@@ -47,10 +49,11 @@ class App extends React.Component {
     ));
 
     return (
-      <div>
-        {/* Letting App to decide the conditional 'if' logic regarding to Conditional component */}
-        {this.state.isLoading ? <h1>Loading...</h1> : <Conditional />}
-        <Clock />
+      <div className="App">
+        {/* Letting App to decide the conditional 'if' logic regarding to Clock/Conditional component */}
+        {this.state.isLoading ? <h1>Loading...</h1> : <Clock />}
+        {/*<Conditional />*/}
+        <LogButton />
         {todoArray}
       </div>
     );

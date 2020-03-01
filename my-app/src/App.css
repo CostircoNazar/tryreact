@@ -1,9 +1,5 @@
 .App {
+  display: block;
   text-align: center;
-  margin-top: 150px;
-}
-
-
-.TodoApp {
-  background-image: url("//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.dvp___9wVgsp2a3QC4iKcgHaEK%26pid%3DApi%26h%3D160&amp;f=1");
+  margin: auto;
 }
