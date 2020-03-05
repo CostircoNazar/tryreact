@@ -5,6 +5,8 @@ import Clock from "./Clock";
 import Conditional from "./Conditional";
 import "./App.css";
 import LogButton from "./components/LogButton";
+import Swapi from "./components/FetchSwapi";
+import Form from "./components/FormPart1";
 
 class App extends React.Component {
   constructor(props) {
@@ -50,6 +52,8 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <Swapi />
+        <Form />
         {/* Letting App to decide the conditional 'if' logic regarding to Clock/Conditional component */}
         {this.state.isLoading ? <h1>Loading...</h1> : <Clock />}
         {/*<Conditional />*/}
