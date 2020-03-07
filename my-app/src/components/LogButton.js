@@ -23,8 +23,8 @@ class LogButton extends React.Component {
 
     return (
       <div>
-        <button onClick={this.handleClick}>{buttonText}</button>
         <h1>{displayText}</h1>
+        <button onClick={this.handleClick}>{buttonText}</button>
       </div>
     );
   }

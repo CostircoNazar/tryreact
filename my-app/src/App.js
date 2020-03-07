@@ -52,12 +52,15 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Swapi />
-        <Form />
-        {/* Letting App to decide the conditional 'if' logic regarding to Clock/Conditional component */}
         {this.state.isLoading ? <h1>Loading...</h1> : <Clock />}
-        {/*<Conditional />*/}
         <LogButton />
+        <Form />
+        <Swapi />
+
+        {/* Letting App to decide the conditional 'if' logic regarding to Clock/Conditional component */}
+
+        {/*<Conditional />*/}
+
         {todoArray}
       </div>
     );

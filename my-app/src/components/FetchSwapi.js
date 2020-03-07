@@ -25,7 +25,7 @@ class Swapi extends React.Component {
   render() {
     return (
       <div>
-        {this.state.isLoading == true && "Is Loading"}
+        {this.state.isLoading === true && "Is Loading"}
         {this.state.character.name}
       </div>
     );
