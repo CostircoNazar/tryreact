@@ -5,8 +5,12 @@ function Input() {
   const [emailText, useEmail] = useState('email');
   const [passwordText, usePassword] = useState('password');
 
-  function handleChange() {
-    target.value
+
+ function handleInput(event) {
+    const { name, value } = event.target;
+    setState({
+      [name]: value
+    });
   }
 
 
@@ -16,13 +20,15 @@ function Input() {
       <input
         type='text'
         placeholder='Email'
+        name='email'
         value={useEmail(emailText)}
-        onChange={handleChange}
+        onChange={handleInput}
         required/>
 
       <input
         type='text'
         placeholder='Password'
+        name='password'
         value={usePassword(passwordText)}
         required/>
 
