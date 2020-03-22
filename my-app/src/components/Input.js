@@ -7,10 +7,10 @@ function Input() {
 
 
  function handleInput(event) {
-    const { name, value } = event.target;
-    setState({
-      [name]: value
-    });
+    //const { name, value } = event.target;
+
+    useEmail(emailText);
+    usePassword(passwordText)
   }
 
 
@@ -21,7 +21,7 @@ function Input() {
         type='text'
         placeholder='Email'
         name='email'
-        value={useEmail(emailText)}
+        value={emailText}
         onChange={handleInput}
         required/>
 
@@ -29,7 +29,8 @@ function Input() {
         type='text'
         placeholder='Password'
         name='password'
-        value={usePassword(passwordText)}
+        value={passwordText}
+        onChange={handleInput}
         required/>
 
     </form>
