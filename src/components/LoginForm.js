@@ -1,33 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Input from './Input.js';
 import SubmitButton from './Button.js';
 
-class LoginForm extends React.Component {
-	constructor(props){
-		super(props);
+function LoginForm() {
 
-		this.state= {
-			userName:'',
-			currentPassword: ''
-		};
-		this.handleChange = this.handleChange.bind(this);
+	const{userName, setEmail} = useState('');
+	const{currentPassword, setPassword} = useState('');
+
+
+	function handleChange(event) {
+		setEmail(event.target.value);
+		setPassword(event.target.value);
 	}
 
-	handleChange(event) {
-		const{name, value} = event.target;
-		this.setState({
-			...this.state,
-			[name]:value
-		})
-	}
 
-	onSubmit= ()=> {
-		alert('Login state is ' + this.state.userName + ' ' + this.state.currentPassword)
+	function onSubmit() {
+		alert('Login state is ' + userName + ' ' + currentPassword)
 	};
 
-
-
-	render() {
 		const style= {
 			fontSize:'20px',
 			marginTop:10,
@@ -36,14 +26,14 @@ class LoginForm extends React.Component {
 
 		return(
 
-			<form  onSubmit={this.onSubmit}>
+			<form  onSubmit={onSubmit}>
 				<Input
 					style={style}
 					type='text'
 					placeholder='userName'
 					name='userName'
 					value={this.state.email}
-					onChange={this.handleChange}
+					onChange={handleChange}
 				/>
 				<Input
 					style={style}
@@ -51,13 +41,12 @@ class LoginForm extends React.Component {
 					placeholder='password'
 					name='currentPassword'
 					value={this.state.password}
-					onChange={this.handleChange}
+					onChange={handleChange}
 				/>
 
 				<SubmitButton style={{color:'red'}} label='Login'/>
 			</form>
 		)
-	}
 }
 
 

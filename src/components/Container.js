@@ -1,9 +1,8 @@
 import React from 'react'
 import LoginForm from './LoginForm';
 
-class Container extends React.Component {
+function Container() {
 
-	render(){
 		let style = {
 			textAlign: 'center',
 			marginTop:'20%'
@@ -14,7 +13,7 @@ class Container extends React.Component {
 			</div>
 
 		)
-	}
+
 }
 
 

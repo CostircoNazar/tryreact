@@ -1,17 +1,13 @@
 import React from 'react';
 
-class Input extends React.Component {
-
-	render() {
+function Input()  {
 
 		return(
 			<div>
 				<input className='login-input' {...this.props}/>
-
 			</div>
 
 		)
-	}
 
 }
 
