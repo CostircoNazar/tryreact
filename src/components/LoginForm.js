@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Input from './Input.js';
-import SubmitButton from './Button.js';
+import SubmitButton from './SubmitButton.js';
+
 
 function LoginForm() {
 
@@ -18,17 +19,11 @@ function LoginForm() {
 		alert('Login state is ' + userName + ' ' + currentPassword)
 	};
 
-		const style= {
-			fontSize:'20px',
-			marginTop:10,
-			marginBottom:10
-		};
-
 		return(
 
-			<form  onSubmit={onSubmit}>
-				<Input
-					style={style}
+			<form  action="/url-where-you-want-to-submit-form-data"
+						 onSubmit={onSubmit} >
+				<Input className='login-input'
 					type='text'
 					placeholder='userName'
 					name='userName'
@@ -36,7 +31,6 @@ function LoginForm() {
 					onChange={handleChange}
 				/>
 				<Input
-					style={style}
 					type='password' autoComplete=''
 					placeholder='password'
 					name='currentPassword'
@@ -44,7 +38,7 @@ function LoginForm() {
 					onChange={handleChange}
 				/>
 
-				<SubmitButton style={{color:'red'}} label='Login'/>
+				<SubmitButton label='Login'/>
 			</form>
 		)
 }

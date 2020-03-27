@@ -4,7 +4,7 @@ import React from 'react';
 function SubmitButton() {
 		return(
 
-			<button type='submit'  > {this.props.label} </button>
+			<button style={{}} type='submit'  > {this.props.label} </button>
 		)
 }
 

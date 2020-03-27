@@ -7,7 +7,7 @@ import Container from './components/Container.js';
 function App() {
     return (
       <div className="App">
-      <Container style={{margin: 50 }}/>
+      <Container />
       </div>
     );
 }

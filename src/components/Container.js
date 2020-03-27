@@ -3,12 +3,8 @@ import LoginForm from './LoginForm';
 
 function Container() {
 
-		let style = {
-			textAlign: 'center',
-			marginTop:'20%'
-		};
 		return(
-			<div style={style} className='login-form-container' >
+			<div className='login-form-container' >
 				<LoginForm />
 			</div>
 
